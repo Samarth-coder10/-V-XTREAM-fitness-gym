@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VMAX Fitness | JP Nagar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            height: 75px;
+            background: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ff3c00;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #ff3c00;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            background:
+                linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+                url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ff3c00;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff3c00;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #111;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #ff3c00;
+        }
+
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #151515;
+            padding: 35px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: #1c1c1c;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ff3c00;
+        }
+
+        .card p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        /* MEMBERSHIP */
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .plan {
+            background: #151515;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .plan.featured {
+            border: 2px solid #ff3c00;
+            transform: scale(1.03);
+        }
+
+        .plan h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 40px;
+            font-weight: bold;
+            color: #ff3c00;
+            margin-bottom: 25px;
+        }
+
+        .plan ul {
+            list-style: none;
+            line-height: 2;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        /* LOCATION */
+        .location {
+            text-align: center;
+            background: #111;
+        }
+
+        .location p {
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050505;
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+
+        footer span {
+            color: #ff3c00;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .features,
+            .plans {
+                grid-template-columns: 1fr;
+            }
+
+            .plan.featured {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+            V<span>MAX</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#plans">Membership</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                BUILD YOUR<br>
+                <span>MAXIMUM.</span>
+            </h1>
+
+            <p>
+                VMAX Fitness — Your premium fitness destination
+                near JP Nagar Metro Station.
+            </p>
+
+            <a href="#plans" class="btn">
+                VIEW MEMBERSHIPS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="section-title">
+            WHY <span>VMAX?</span>
+        </h2>
+
+        <div class="features">
+
+            <div class="card">
+                <h3>💪 Strength</h3>
+                <p>
+                    High-quality strength equipment designed
+                    to help you build muscle and become stronger.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔥 Cardio</h3>
+                <p>
+                    Improve your endurance with modern cardio
+                    equipment and intense conditioning workouts.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🏆 Trainers</h3>
+                <p>
+                    Get guidance from experienced trainers and
+                    learn proper exercise technique.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMBERSHIP -->
+    <section id="plans">
+
+        <h2 class="section-title">
+            MEMBERSHIP <span>PLANS</span>
+        </h2>
+
+        <div class="plans">
+
+            <div class="plan">
+
+                <h3>STARTER</h3>
+
+                <div class="price">
+                    ₹999
+                </div>
+
+                <ul>
+                    <li>Gym Access</li>
+                    <li>Cardio Area</li>
+                    <li>Basic Equipment</li>
+                    <li>Locker Access</li>
+                </ul>
+
+                <a href="#" class="btn">
+                    JOIN NOW
+                </a>
+
+            </div>
+
+
+            <div class="plan featured">
+
+                <h3>PRO</h3>
+
+                <div class="price">
+                    ₹1,499
+                </div>
+
+                <ul>
+                    <li>Unlimited Gym Access</li>
+                    <li>All Equipment</li>
+                    <li>Trainer Guidance</li>
+                    <li>Personal Workout Plan</li>
+                </ul>
+
+                <a href="#" class="btn">
+                    JOIN NOW
+                </a>
+
+            </div>
+
+
+            <div class="plan">
+
+                <h3>ELITE</h3>
+
+                <div class="price">
+                    ₹2,499
+                </div>
+
+                <ul>
+                    <li>Everything in PRO</li>
+                    <li>Personal Training</li>
+                    <li>Nutrition Guidance</li>
+                    <li>Progress Tracking</li>
+                </ul>
+
+                <a href="#" class="btn">
+                    JOIN NOW
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOCATION -->
+    <section class="location" id="location">
+
+        <h2 class="section-title">
+            FIND <span>US</span>
+        </h2>
+
+        <p>📍 JP Nagar, Bengaluru</p>
+
+        <p>
+            Near JP Nagar Metro Station
+        </p>
+
+        <p>
+            Karnataka, India
+        </p>
+
+        <br>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=JP+Nagar+Metro+Station+Bengaluru"
+           target="_blank"
+           class="btn">
+            OPEN GOOGLE MAPS
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <span>VMAX Fitness</span>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
